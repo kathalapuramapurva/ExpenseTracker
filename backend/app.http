@@ -1,0 +1,115 @@
+POST http://localhost:3001/register/
+Content-Type:application/json 
+
+{
+  "name": "Apurva",
+  "email": "att@gmail.com",
+  "password": "apu",
+  "phone": "1234567890",
+  "account_no": "9034",
+   "account_name": "KApurva",
+   "balance": "90000"
+}
+
+###
+POST http://localhost:3001/login/
+Content-Type:application/json 
+
+{
+  "email": "ap900@gmail.com",
+  "password": "apurvaprei"
+}
+
+
+###
+GET http://localhost:3001/users/account/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTlAZ21haWwuY29tIiwiaWF0IjoxNzIwODkyMjEwfQ.TQheY1VPOYE6DHDuf5HdV2U8rwxCnFF-KM4KBPR3KFU
+
+###
+POST http://localhost:3001/users/transactions/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTAwQGdtYWlsLmNvbSIsImlhdCI6MTcyMDk2ODYzNX0.A3UqrZ_OU5GLxvZJz70nL5Vdkg4_t3x1jlkIPxoWdW0
+Content-Type: application/json 
+
+{
+    "category": "jobSalary",
+    "amount": "15000",
+    "description": "Salary being Credited",
+    "type": "expense"
+}
+
+###
+GET http://localhost:3001/users/details
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTAwQGdtYWlsLmNvbSIsImlhdCI6MTcyMDk2ODYzNX0.A3UqrZ_OU5GLxvZJz70nL5Vdkg4_t3x1jlkIPxoWdW0
+
+
+###
+GET http://localhost:3001/users/transactions/income
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTAwQGdtYWlsLmNvbSIsImlhdCI6MTcyMDk2ODYzNX0.A3UqrZ_OU5GLxvZJz70nL5Vdkg4_t3x1jlkIPxoWdW0
+
+###
+GET http://localhost:3001/users/transactions/expense
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTAwQGdtYWlsLmNvbSIsImlhdCI6MTcyMDk2ODYzNX0.A3UqrZ_OU5GLxvZJz70nL5Vdkg4_t3x1jlkIPxoWdW0
+
+###
+DELETE  http://localhost:3001/users/transactions/5/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTAwQGdtYWlsLmNvbSIsImlhdCI6MTcyMDk2ODYzNX0.A3UqrZ_OU5GLxvZJz70nL5Vdkg4_t3x1jlkIPxoWdW0
+
+
+###
+POST http://localhost:3000/users/recurring/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTFAZ21haWwuY29tIiwiaWF0IjoxNzIwODkxODk5fQ.x46eVc2zZ3HcuZGey9aV8FmtgEVUo85AlMl-L6-Tbr0
+Content-Type: application/json 
+
+{
+    "date": "2024-07-12",
+    "category": "homeLoan",
+    "description": "Debited for home loan",
+    "amount": "3000"
+}
+
+###
+GET http://localhost:3000/users/recurring/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTFAZ21haWwuY29tIiwiaWF0IjoxNzIwODkxODk5fQ.x46eVc2zZ3HcuZGey9aV8FmtgEVUo85AlMl-L6-Tbr0
+
+###
+PUT http://localhost:3000/users/recurring/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTFAZ21haWwuY29tIiwiaWF0IjoxNzIwODkxODk5fQ.x46eVc2zZ3HcuZGey9aV8FmtgEVUo85AlMl-L6-Tbr0
+Content-Type: application/json 
+
+{
+    "date": "2024-04-12",
+    "amount": "1000"
+}
+
+###
+DELETE http://localhost:3000/users/recurring/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTFAZ21haWwuY29tIiwiaWF0IjoxNzIwODkxODk5fQ.x46eVc2zZ3HcuZGey9aV8FmtgEVUo85AlMl-L6-Tbr0
+
+
+###
+POST http://localhost:3000/users/budget/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwOTFAZ21haWwuY29tIiwiaWF0IjoxNzIwODkxODk5fQ.x46eVc2zZ3HcuZGey9aV8FmtgEVUo85AlMl-L6-Tbr0
+Content-Type: application/json 
+
+{
+    "category": "Groceries",
+    "description": "For vegetables and Fruits",
+    "amount": "2000"
+}
+
+###
+GET http://localhost:3000/users/budget/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwMUBnbWFpbC5jb20iLCJpYXQiOjE3MjA3ODE0ODN9.Xt5NdFoXaoj2m7tqZZvKmuA8sIQePQCIPP2V2Ji-ZgQ
+
+###
+PUT http://localhost:3000/users/budget/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwMUBnbWFpbC5jb20iLCJpYXQiOjE3MjA3ODE0ODN9.Xt5NdFoXaoj2m7tqZZvKmuA8sIQePQCIPP2V2Ji-ZgQ
+Content-Type: application/json 
+
+{ 
+    "amount": "5000"
+}
+
+###
+DELETE http://localhost:3000/users/budget/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFwMUBnbWFpbC5jb20iLCJpYXQiOjE3MjA3ODE0ODN9.Xt5NdFoXaoj2m7tqZZvKmuA8sIQePQCIPP2V2Ji-ZgQ
